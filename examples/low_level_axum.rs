@@ -49,8 +49,8 @@ async fn main() {
             }
         }
     });
-
-    let app = Router::new().route("/", get(|| async { "Hello Tls!" }));
+ 
+        let app = Router::new().route("/", get(|| async { "Hello Tls!" }));
 
     let addr = SocketAddr::from((Ipv6Addr::UNSPECIFIED, args.port));
     axum_server::bind(addr).acceptor(acceptor).serve(app.into_make_service()).await.unwrap();
